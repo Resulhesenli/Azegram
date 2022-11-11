@@ -1,0 +1,56 @@
+﻿Scaffold-DbContext "Server=RESUL\SQLEXPRESS;Database=Instagram;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+
+
+create table Genders
+(
+	GenderId int identity primary key,
+	GenderName nvarchar(15)
+)
+create table Users
+(
+	UserId int identity primary key,
+	UserGenderId int references Genders(GenderId) on delete cascade,
+	UserNickName varchar(25),
+	UserName nvarchar(15),
+	UserSurname nvarchar(15),
+	UserProfilePhotoUrl nvarchar(20),
+	UserBio nvarchar(100),
+	UserPassword nvarchar(30)
+)
+create table Posts
+(
+	PostId int identity primary key,
+	PostUserId int references Users(UserId) on delete cascade,
+	PostPhotoUrl nvarchar(20),
+	PostDescription nvarchar(500),
+	PostWriteDate datetime not null default getdate()
+)
+create table Comments
+(
+	CommentId int identity primary key,
+	CommentUserId int references Users(UserId) on delete cascade,
+	CommentPostId int references Posts(PostId) on delete cascade,
+	CommentDescription nvarchar(max),
+	CommentWriteDate datetime not null default getdate()
+)
+create table Likes
+(
+	LikeId int identity primary key,
+	LikeUserId int references Users(UserId) on delete cascade,
+	LikePostId int references Posts(PostId) on delete cascade
+)
+create table Followers 
+(
+	FollowerId int identity primary key,
+	FollowerFromUserId int references Users(UserId) on delete cascade,
+	FollowerToUserId int references Users(UserId) on delete cascade,
+	FollowerIsAccept bit 
+)
+
+profildə like sayi görsənmir
+following ve followers
+sizin üçün
+axtarişi siləndən sonra listlərin silinməsi
+followu qəbul etməkdə problem var

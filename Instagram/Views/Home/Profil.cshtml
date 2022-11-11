@@ -1,0 +1,75 @@
+﻿
+    @model User
+
+ 
+            <div class="container py-4">
+                <div class="row ">
+                    <div class="d-flex colum">
+                        <div class="ppsekil mx-5">
+                            <img src="/img/@Model.UserProfilePhotoUrl" class="w-100">
+                        </div>
+                        <div class="pnm">
+                            <h3>@Model.UserNickName</h3>
+                            <p>@Model.UserBio</p>
+                        </div>
+                        <div class="pnm2">
+                            <div class="d-flex justify-content-around saylar" style="width: 75%;margin-left: 180px;">
+                                <p><span class="pe-1">@Model.Posts.Count()</span>Posts</p>
+                                <a href="/Home/Following?UserNickName=@Model.UserNickName" class="text-black"><span class="pe-1 ">@ViewBag.following</span>Following</a>
+                                <a href="/Home/Followers?UserNickName=@Model.UserNickName" class="text-black"><span class="pe-1">@ViewBag.Follower</span>Followers</a>                     
+                            </div>
+                            
+                    @if (@Model.UserId.ToString() == User.FindFirst("Id").Value)
+                    {   <div class="butonlar" style="margin-left: 400px;">
+                            <button class="btn btn-success py-1 px-3"><a href="/home/editProfile" class="text-light">Edit page</a></button>
+                            <button class="btn btn-dark py-1 px-3"><a href="/User/LogOut" class="text-light">Logout</a></button>
+                        </div>
+                    }else{
+                        <div class="butonlar">
+                        @if(@Model.FollowerFollowerToUsers.Count > 0)
+                        {
+                            if (@Model.FollowerFollowerToUsers.Any(x => x.FollowerIsAccept == true))
+                            {
+                                 <button udi=@Model.UserId class="btn btn-primary py-1 px-3 flw" style="width:200px; margin-right:50px"><a href="#" class="text-light">UnFollow</a></button>
+                            }else
+                            {
+                                 <button udi=@Model.UserId class="btn btn-primary py-1 px-3 flw" style="width:200px; margin-right:50px"><a href="#" class="text-light">Cancell</a></button>
+                                 
+                            }
+                        }
+                        else
+                        {
+                            <button udi=@Model.UserId class="btn btn-primary py-1 px-3 flw" style="width:200px; margin-right:50px">Follow</button>
+                        }
+                         </div>
+                    }
+                            
+                        </div>
+                    </div>
+                    <div class="postlar">
+                        <h3 class="text-center py-2 fs-1">Posts</h3>
+                        <div class="container-fluid">
+                            <div class="row">
+                    @if(@Model.FollowerFollowerToUsers.Any(x => x.FollowerIsAccept == true) || @Model.UserId.ToString() == User.FindFirst("Id").Value)
+                    {
+                        
+                        @foreach (Post item in ViewBag.Post)
+                            {                         
+                                    <div class="col-md-4 profsek" style="background-image:url('/img/@item.PostPhotoUrl');">
+                                        <div class="col-md-12 detail d-flex">
+                                             <a  class="LikeNumber proflikenumber" LikePostId="@item.PostId" ><i class="@(item.Likes.Where(x=>x.IsLike==true && x.LikeUserId == int.Parse(User.FindFirst("Id").Value)).Count()>0 ? "fa-solid fa-heart text-danger" : "far fa-heart")  pe-1"></i> <span> @item.Likes.Where(x=>x.IsLike==true).Count()</span></a>
+                                            <a href="/home/InstaPost/@item.PostId" class="pe-5"><i class="far fa-comment pe-2"></i>@item.Comments.Count()</a>
+                                        </div>
+                                    </div>
+                             }
+                    }else{
+                        <p class="text-center text-danger pt-2"> Istifadəcinin profili gizlidir</p>
+                    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+            <script src="~/Js/index.js"></script>
+            <script src="~/Js/custom.js"></script>

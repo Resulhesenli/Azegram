@@ -1,0 +1,648 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+#back {
+    background: linear-gradient(0.25turn,#ebf8e1,#017EC4, #ebf8e1, #E02A70,#ebf8e1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:100vh;
+}
+
+#main {
+    width: 65%;
+    margin: auto;
+    border-left: 1px solid#ddd;
+    border-right: 1px solid #ddd;
+}
+.ust{
+    margin-top:3px;
+}
+.ust form input{
+    height:40px;
+    margin-top:5px;
+}
+.axtar{
+    height:40px;
+    margin-top:5px;
+}
+
+#main nav {
+    width: 65%;
+    margin: auto;
+    background-color: #fff;
+    border-left: 1px solid#ddd;
+    border-right: 1px solid #ddd;
+}
+
+.navbar-brand {
+    color: #017EC4 !important;
+    font-weight: 600;
+    font-size: 31px !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 20px !important;
+}
+
+.active {
+    color: #017EC4 !important;
+}
+
+.btn {
+    padding: 0.01rem 0.55rem !important;
+}
+.flw{
+    border:none!important;
+    outline:none!important;
+}
+
+.btn-outline-primary {
+    color: #E02A70 !important;
+    border: 1px solid #E02A70 !important;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #E02A70 !important;
+        color: #fff !important;
+    }
+
+.row > * {
+    padding: 0 !important;
+}
+
+.posts:nth-child(1) {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-top: 90px !important;
+}
+
+.posts {
+    margin-top: 20px !important;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.post {
+    margin-top: 100px !important;
+}
+
+.sekil img {
+    height: 700px;
+}
+
+.div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.div1 {
+    padding: 10px;
+}
+.div1 a{
+    color:black!important;
+    cursor:pointer;
+}
+
+    .div1 button {
+        font-size: 20px;
+    }
+
+.div2 {
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+    .div2 p {
+        padding-top: 10px;
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+.div3 {
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.div4 {
+    padding-left: 25px;
+    padding-right: 35px;
+}
+
+    .div4 h5 {
+        margin-top: 7px;
+        padding-left: 5px;
+        font-size: 16px;
+    }
+
+    .div4 p {
+        font-size: 12px;
+        padding-left: 60px;
+        margin-top: 5px;
+        width: 90%;
+    }
+    .div4 button{
+        display:none;
+    }
+    .div4 :hover button{
+        display:block;
+    }
+
+.div3 input {
+    border-radius: 0.2rem;
+    border: 2px solid #ddd;
+    padding: 6px 10px;
+    width: 90%;
+}
+
+.pp {
+    width: 55px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nm {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #017EC4;
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.daxil a {
+    padding-left: 55px !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#login {
+    padding-top: 45px;
+    width: 100% !important;
+    min-height: 100vh !important;
+    background: linear-gradient(0.95turn,#ebf8e1,#017EC4, #ebf8e1, #E02A70,#ebf8e1);
+}
+
+.btn-primary {
+    background-color: #017EC4 !important;
+    margin-left:310px;
+}
+.btn-primary a {
+    color:#fff;
+}
+.log {
+    margin-left: 358px;
+}
+.daxil {
+    background-color: #fff;
+    width: 40%;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 0.4rem;
+}
+
+    .daxil form {
+        width: 80%;
+        margin: auto;
+    }
+
+    .daxil input {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 0.2rem;
+        border: 2px solid #ddd;
+        margin: 10px auto;
+    }
+
+.ppsekil {
+    margin-top: 90px !important;
+    width: 150px !important;
+    height: 150px !important;
+}
+
+    .ppsekil img {
+        border-radius: 50%;
+        height:150px;
+    }
+
+.pnm {
+    margin-top: 95px !important;
+    width:10%;
+}
+
+    .pnm h3 {
+        font-size: 18px;
+    }
+
+    .pnm p {
+        font-size: 13px;
+    }
+
+.pnm2 {
+    margin-top: 95px !important;
+}
+.pnm2 .buttonlar {
+    margin-left: 280px;
+}
+    .pnm2 .buttonlar flw{
+        margin-right:50px;
+    }
+
+
+    .pnm2 span {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .pnm2 p {
+        font-weight: 400;
+        font-size: 19px;
+    }
+
+.postlar {
+    margin-top: 30px !important;
+}
+
+    .postlar h3 {
+        border-bottom: 1px solid #ddd;
+    }
+
+.container-fluid .row .col-md-4 {
+    height: 300px !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #FFF;
+}
+.edit{
+    min-height:100vh;
+}
+.edit form {
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+    .edit form input {
+        width: 100%;
+        padding: 10px 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 0.2rem;
+        border: 2px solid #ddd;
+    }
+
+.daxil .p {
+    padding: 10px !important;
+    font-size: 20px;
+}
+
+.parea {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    margin: 5px 0px;
+}
+
+    .parea .item {
+        width: 99%;
+        margin: 5px 1%;
+        position: relative;
+    }
+
+        .parea .item img {
+            width: 100%;
+            height:550px;
+        }
+
+        .parea .item::after {
+            opacity: 0;
+            content: 'Remove';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 19px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .parea .item:hover::after {
+            opacity: 1;
+        }
+
+        .parea .item input {
+            display: none;
+        }
+
+.detail {
+    width: 100%;
+    position: relative;
+}
+
+    .detail::after {
+        content: ' ';
+        width: 100%;
+        height: 102%;
+        background-color: rgba(0, 0, 0, 0.7);
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+
+    }
+
+    .detail:hover::after {
+        opacity: 1;
+    }
+    .detail:hover * {
+        color:white;
+    }
+    .detail a {
+        width:1%;
+        opacity: 0;
+        font-size: 25px;
+        color: white;
+        align-items: center;
+        z-index: 10000;
+        /* display:none; */
+        justify-content: center;
+        display: flex;
+        padding: 127px 50px !important;
+    }
+    .detail a:first-child{
+        margin-left:55px;
+    }
+    .detail:hover a {
+        /* display: flex; */
+        opacity: 1;
+    }
+
+.boxes {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.75);
+    overflow: hidden !important;
+}
+
+    .boxes .box {
+        width: 42%;
+        margin: 90px auto;
+        border-radius: 0.3rem;
+        background-color: #Fff;
+        padding-bottom: 20px;
+    }
+
+.sil {
+    position: relative;
+    left: 90%;
+    top: 0;
+}
+
+    .sil i {
+        font-size: 25px !important;
+    }
+
+.followers{
+    padding-top:105px;
+}
+.searchfriend{
+    position:relative;
+}
+.searchfriend ul{
+    display:flex;
+    flex-direction:column;
+}
+.searchfriend input{
+    height:32px;
+}
+.searchinputdata a{
+   color:#fff;
+}
+.searchinputdata .searchphoto img {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+}
+.searchinputdata a:hover {
+    color: #fff;
+}
+.axtar {
+    height: 30px;
+}
+.searchinputdata {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 84%;
+    border-radius:6px;
+    background-color: #017EC4;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    /*Login*/
+    #login {
+        width: 100% !important;
+        padding-top: 130px;
+    }
+
+    ..btn-primary {
+        margin-left: 0px;
+    }
+
+    .fs-5 {
+        font-size: 1rem !important;
+    }
+
+    .log {
+        margin-left: 0px;
+    }
+
+    .daxil {
+        width: 90%;
+    }
+
+        .daxil a {
+            padding-left: 83px !important;
+        }
+
+        .daxil button {
+            padding: 2px 10px !important;
+            font-size:1rem!important;
+        }
+
+        .daxil p {
+            margin-top: 2.5rem !important;
+            margin-bottom: 0px;
+        }
+    /*Registr*/
+    .qeyd {
+        margin-left: 0px !important;
+    }
+
+    .reqstr button {
+        font-size: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+
+    .registr {
+        padding-bottom: 30px !important;
+        padding-top: 60px !important;
+    }
+    /*Index*/
+    #main {
+        width: 100%;
+    }
+
+        #main nav {
+            width: 100%;
+        }
+
+    .sekil img {
+        height: 500px;
+    }
+
+    .div3 input {
+        width: 85%;
+        padding: 3px 10px!important;
+    }
+    /*Profil*/
+    .navbar-brand {
+        font-size: 23px !important;
+    }
+    .ppsekil {
+        width: 100px !important;
+        height:120px!important;
+    }
+    .ppsekil img {
+        height: 100px!important;
+    }
+    .pnm2 {
+        width:64%!important;
+        margin-top:0px!important;
+    }
+    .pnm2 .butonlar {
+        margin-left: 20px !important;
+    }
+    .pnm2 .saylar {
+        width: 50%!important;
+        margin-left: 65px!important;
+    }
+    .pnm2 p{
+        font-size:16px!important;
+        margin-left:15px!important;
+    }
+    .pnm2 a{
+         margin-left:15px!important;
+    }
+    .pnm2 span{
+        font-size:18px!important;
+    }
+    .colum{
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    }
+    .pnm{
+        margin-top:0px!important;
+        width:60%!important;
+        text-align:center;
+    }
+    .flw{
+        margin-left:15px!important;
+    }
+    .postlar .row .profsek{
+        width:50%!important;
+    }
+    .postlar .row .detail{
+        height:98%!important;
+       /* opacity:0!important;*/
+    }
+    .postlar .row .detail a {
+        width:100%;
+        margin-left: 0px !important;
+        font-size: 20px;
+        opacity:0!important;
+    }
+    .proflikenumber {
+         display:none!important;
+    }
+    /*paylasim*/
+    .sekpaylas{
+        margin-left:0px!important;
+    }
+    .parea .item img {
+        height: 350px;
+    }
+    /*FollowerRequest*/
+    .acceptBtnn{
+        margin-left:0px!important;
+    }
+    /*Following*/
+    .followingpersons {
+        width:170px!important;
+        margin-left: 30px !important;
+    }
+    .bir {
+        margin-left: 20px;
+    }
+    .nm {
+        padding-top: 15px;
+    }
+    /*Navbar*/
+    .navmenu {
+        display:flex;
+        flex-direction: initial !important;
+        justify-content: space-around !important;
+        align-items:center;
+        padding:0px!important;
+    }
+    .searchfriend ul {
+        flex-direction: inherit !important;
+        justify-content: center !important;
+    }
+    .searchfriend ul li{
+        padding-left:13px;
+    }
+    .searchfriend input{
+        width:80%;
+    }
+    .userpost{
+        margin-top:20px!important;
+    }
+    .searchinputdata{
+       /* position:sticky;*/
+    }
+}

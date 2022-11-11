@@ -1,0 +1,12 @@
+﻿@model List<Post>
+
+        <div class="container userpost">
+            <div class="row">
+                @foreach (var item in Model)
+               {
+                   <div class="col-md-12 posts"> 
+                       @await Html.PartialAsync("_post",item)
+                   </div>
+               }
+            </div>
+        </div>

@@ -1,0 +1,29 @@
+﻿  @model User
+                <div class="edit">
+                    <div style="padding-top: 80px;">
+                        <h2 class="text-center">Profil Məlumatlarım</h2>
+                    </div>
+                        <form  asp-controller="Home" asp-action="UpdateProfil" enctype="multipart/form-data" method="post">
+                            <input type="file" placeholder="Photo" id="postsekilselect" asp-for="UserProfilePhotoUrl">
+                            <div class="parea">
+                              <!-- <div class="item">
+                                  <img src="audio.png">
+                                  <input type="file">
+                              </div> -->
+                            </div>
+                            <input type="text" placeholder="Name" asp-for="UserName">
+                            <span asp-validation-for="UserName"class="text-danger"></span>
+                            <input type="text" placeholder="Surname" asp-for="UserSurname">
+                            <span asp-validation-for="UserSurname"class="text-danger"></span>
+                            <input type="text" placeholder="Nickname" asp-for="UserNickName">
+                            <span asp-validation-for="UserNickName"class="text-danger"></span>
+                            <input type="text" placeholder="Description" asp-for="UserBio">
+                            <input type="password" placeholder="Password" asp-for="UserPassword">
+                            <span asp-validation-for="UserPassword" class="text-danger"></span>
+@*                            <input type="password" placeholder="Password">*@
+                            <button class="btn btn-success py-1 pe-3"><a class="text-light">Update</a></button>
+                        </form>
+                </div>
+
+    <script src="/Js/post.js"></script>
+ <script src="~/Js/index.js"></script>

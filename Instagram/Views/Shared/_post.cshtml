@@ -1,0 +1,72 @@
+﻿
+            @model Post
+                <div class="div d-flex justify-content-between">
+                <div class="d-flex">
+                    <a href="/home/profile?usernickname=@Model.PostUser.UserNickName"><img src="/img/@Model.PostUser.UserProfilePhotoUrl" class="pp"></a>
+                    <h3 class="nm">@Model.PostUser.UserNickName</h3>
+                </div>
+                <div>
+                    @if (@Model.PostUser.UserId.ToString() == User.FindFirst("Id").Value)
+                    {
+                        <button class="btn pt-1 fs-5" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-xmark"></i></button>
+                    }
+                </div>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Postu silmek istediyinize eminsiniz?</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-dismiss="modal"><a href="/Home/Deletepost/@Model.PostId" class="text-light">Beli</a></button>
+                                <button class="btn btn-danger" data-bs-dismiss="modal">Xeyir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sekil">
+                <img src="/img/@Model.PostPhotoUrl" class="w-100">
+            </div>
+            <div class="div1">
+              <a  class="LikeNumber" LikePostId="@Model.PostId" ><i class="@(Model.Likes.Where(x=>x.IsLike==true && x.LikeUserId == int.Parse(User.FindFirst("Id").Value)).Count()>0 ? "fa-solid fa-heart text-danger" : "far fa-heart")  pe-1"></i> <span> @Model.Likes.Where(x=>x.IsLike==true).Count()</span></a>
+              <button class="btn"> <a href="/home/InstaPost/@Model.PostId" style="color:black"><i class="far fa-comment pe-1"></i>@Model.Comments.Count() </a></button>
+            </div>
+            <div class="div2">
+                <h3 class="nm fs-5">@Model.PostUser.UserNickName</h3>
+                <p>@Model.PostDescription</p>
+            </div>
+            <div class="div3">
+                <form class="formcomment" asp-action="AddComment" asp-controller="home" asp-route-id="@Model.PostId">
+                    <input placeholder="Add a comment" name="CommentText" autocomplete="off">
+                    <button id="submitbtn" postid="@Model.PostId" class="btn"><i class="fas fa-chevron-circle-right fs-2"></i></button>
+                </form>
+
+            </div>
+            <div class='comms'>
+
+            @foreach (Comment comment in Model.Comments.OrderByDescending(x => x.CommentId).Take(2))
+            {
+                <div class="div4">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <a href="/home/profile?usernickname=@comment.CommentUser.UserNickName"><img src="/img/@comment.CommentUser.UserProfilePhotoUrl" class="pp"></a>
+                            <h5>@comment.CommentUser.UserNickName</h5>
+                        </div>
+                        <div>
+                            @if (@comment.CommentUser.UserId.ToString() == User.FindFirst("Id").Value)
+                            {
+                                <button class="btn pt-1 fs-5 removeComment" commentid="@comment.CommentId"><i class="fa-solid fa-xmark"></i></button>            
+                            }
+                        </div>
+                    </div>
+                   <p>@comment.CommentDescription<br /> <br /><span> <b>@comment.CommentWriteDate.ToString("dd") @comment.CommentWriteDate.ToString("MMM") @comment.CommentWriteDate.ToString("HH"):@comment.CommentWriteDate.ToString("mm")</b></span></p>
+
+                </div>
+                }       
+                @if (@Model.Comments.Count()>2)
+                    {
+                            <a style="margin-left:30px" href="/home/InstaPost/@Model.PostId">Bütün şərhlər(@Model.Comments.Count())</a>
+                    }
+                </div>

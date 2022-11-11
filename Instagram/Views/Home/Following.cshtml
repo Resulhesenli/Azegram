@@ -1,0 +1,23 @@
+﻿ @model User         
+                           
+                <div class="container">
+                <div class="row followers text-center">
+                    @foreach (Follower item in ViewBag.Followers)
+                           {
+                    <div class="d-flex justify-content-around mt-3 mb-2 istek">
+                        <div class="bir d-flex">
+                            <a href="/home/profil?UserNickName=@item.FollowerToUser.UserNickName">
+                                <img src="~/img/@item.FollowerToUser.UserProfilePhotoUrl" class="pp">
+                            </a>
+                           <a href="/home/profil?UserNickName=@item.FollowerToUser.UserNickName" style="color:#017EC4"> <h3 class="nm">@item.FollowerToUser.UserNickName</h3></a>
+                        </div>
+                            
+                        <div class="iki">
+                             <button class="btn btn-primary mt-2 py-1 px-3 followingpersons" style="width:200px; margin-right:50px"><a href="/home/profil?UserNickName=@item.FollowerToUser.UserNickName" class="text-light">Profil</a></button>
+                        </div>
+                    </div>
+                            }
+
+               </div>
+            </div>  
+            <script src="~/Js/index.js"></script>

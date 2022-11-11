@@ -1,0 +1,91 @@
+﻿
+    
+            @model Post
+       
+            <div class="container userpost">
+               <div class="row">
+
+                   @foreach (Post item in ViewBag.Post)
+                  {
+                      
+                    <div class="col-md-12 posts">
+                        <div class="div d-flex justify-content-between">
+                            <div class="d-flex">
+                             <a href="/home/profil?UserNickName=@item.PostUser.UserNickName"><img src="/img/@item.PostUser.UserProfilePhotoUrl" class="pp"></a>
+                                <div>
+                                   <a href="/home/profil?UserNickName=@item.PostUser.UserNickName" style="color:#017EC4"><h3 class="nm">@item.PostUser.UserNickName</h3> </a>
+                                    <span class="ps-2">@item.PostWriteDate.ToString("dd") @item.PostWriteDate.ToString("MMM") @item.PostWriteDate.ToString("HH"):@item.PostWriteDate.ToString("mm")</span>
+                                </div>
+                            </div>
+                            <div>
+                            @if (@item.PostUserId.ToString() == User.FindFirst("Id").Value)
+                            {   
+                                <button class="btn pt-1 fs-5" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-xmark"></i></button>
+                            }
+                            </div>
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Postu silmek istediyinize eminsiniz?</h4>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>                         
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                          <a href="/home/DeletePost/@item.PostId"> Beli</a> 
+                                        </button>
+                                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Xeyir</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>                      
+                        </div>
+                        <div class="sekil">
+                           <a href="/home/InstaPost/@item.PostId"> <img src="~/img/@item.PostPhotoUrl" class="w-100"></a>
+                        </div>
+                        <div class="div1">
+                            <a  class="LikeNumber" LikePostId="@item.PostId" ><i class="@(item.Likes.Where(x=>x.IsLike==true && x.LikeUserId == int.Parse(User.FindFirst("Id").Value)).Count()>0 ? "fa-solid fa-heart text-danger" : "far fa-heart")  pe-1"></i> <span> @item.Likes.Where(x=>x.IsLike==true).Count()</span></a>
+                            <button class="btn"> <a href="/home/InstaPost/@item.PostId" style="color:black"><i class="far fa-comment pe-1"></i>@item.Comments.Count() </a></button>
+                        </div>
+                        <div class="div2">
+                           <a href="/home/profil?UserNickName=@item.PostUser.UserNickName" style="color:#017EC4"> <h3 class="nm fs-5">@item.PostUser.UserNickName</h3></a>
+                            <p>@item.PostDescription
+                            </p>
+                        </div>
+                        <div class="div3">
+                            <form action="/Home/AddComment/@item.PostId" method="post" id="formComment">
+                                <input type="text" placeholder="Add a comment" name="CommentDescription" autocomplete="off">
+                                <button class="btn"><i class="fas fa-chevron-circle-right fs-2"></i></button>
+                            </form>
+                        </div>
+                       <div class="comms">
+                        @foreach(Comment com in item.Comments.OrderByDescending(x => x.CommentId).Take(2))
+                            {
+                        <div class="div4">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex" style="align-items: center;">
+                                   <a href="/home/profil/@com.CommentUser?UserNickName=@com.CommentUser.UserNickName"><img src="~/img/@com.CommentUser.UserProfilePhotoUrl" class="pp"></a>
+                                       <a href="/home/profil/@com.CommentUser?UserNickName=@com.CommentUser.UserNickName" style="color:black"> <h5>@com.CommentUser.UserNickName</h5> </a>
+                                </div>
+                                <div>
+                                   @if (@com.CommentUserId.ToString() == User.FindFirst("Id").Value)
+                                {
+                                     <button class="btn pt-1 fs-5 removeComment" commentid="@com.CommentId"><i class="fa-solid fa-xmark"></i></button>
+                                }
+                                </div>
+                            </div>
+                            <p>@com.CommentDescription<br /> <br /><span> <b>@com.CommentWriteDate.ToString("dd") @com.CommentWriteDate.ToString("MMM") @com.CommentWriteDate.ToString("HH"):@com.CommentWriteDate.ToString("mm")</b></span></p>
+                                 
+                        </div>
+                        }
+                        </div>
+                    @if (@item.Comments.Count()>2)
+                    {
+                         <a style="margin-left:30px" href="/home/InstaPost/@item.PostId">Bütün şərhlər(@item.Comments.Count())</a>
+                    }
+                        </div>
+                      }
+                
+               </div>
+            </div>  
+            <script src="~/Js/index.js"></script>
