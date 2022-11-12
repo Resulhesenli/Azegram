@@ -20,9 +20,9 @@
         <div class="daxil">
             <h1 class="text-center py-3">Daxil ol</h1>
             <form asp-action="Login"   asp-controller="User" method="post">
-                <input  placeholder="Nickname" type="text" asp-for="UserNickName" autocomplete="off">
+                <input  placeholder="Nickname" type="text" asp-for="UserNickName" value="resul_hesenli" autocomplete="off">
                 <span asp-validation-for="UserNickName" class="text-danger"></span>
-                <input type="password" placeholder="Password" asp-for="UserPassword" autocomplete="off">
+                <input type="password" placeholder="Password" asp-for="UserPassword" value="456" autocomplete="off">
                  <span asp-validation-for="UserPassword" class="text-danger"></span>
                 <button class="btn log btn-primary p-1 px-4 fs-5">Login</button>
             </form>

@@ -204,14 +204,12 @@ a {
 
 .btn-primary {
     background-color: #017EC4 !important;
-    margin-left:310px;
+   
 }
 .btn-primary a {
     color:#fff;
 }
-.log {
-    margin-left: 358px;
-}
+
 .daxil {
     background-color: #fff;
     width: 40%;
